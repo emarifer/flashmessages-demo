@@ -160,7 +160,8 @@ func TokenRefresherMiddleware(next echo.HandlerFunc) echo.HandlerFunc {
 		// transcurrido el tiempo suficiente.
 		// En este caso, sólo se emitirá un nuevo token si el token anterior
 		// está dentro un intervalo de 15 minutos antes de su caducidad.
-		if claims.ExpiresAt.Unix()-time.Now().Unix() < int64(15*time.Minute) {
+		// fmt.Println("Tiempo hasta ahora:", time.Until(claims.ExpiresAt.Time))
+		if time.Until(claims.ExpiresAt.Time) < 15*time.Minute {
 			// obtenemos el token de actualización de la cookie.
 			rc, err := c.Cookie(refreshTokenCookieName)
 			if err == nil && rc != nil {

@@ -1,0 +1,36 @@
+{{ define "base.layout.start" }}
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Demo application for managing flash messages">
+    <meta name="google" content="notranslate" />
+    <link rel="shortcut icon" href="/img/gopher-svgrepo-com.svg" type="image/svg+xml">
+    <link rel="stylesheet" href="/css/style.css" type="text/css" />
+    <link href="https://cdn.jsdelivr.net/npm/daisyui@4.0.3/dist/full.min.css" rel="stylesheet" type="text/css" />
+    <script src="https://cdn.tailwindcss.com"></script>
+    <title>{{ .Title }}</title>
+    <script src="https://unpkg.com/hyperscript.org@0.9.12"></script>
+</head>
+
+<body class="bg-[#1D232A] text-[#A6ADBA] h-[100vh]">
+
+    <header class="fixed top-8 right-0 left-0">
+        {{ template "messages" .}}
+    </header>
+
+
+    <main class="flex flex-col gap-8 justify-center items-center h-full">
+{{ end }}
+
+
+{{ define "base.layout.end" }}
+    </main>
+
+</body>
+
+</html>
+{{ end }}

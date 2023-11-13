@@ -1,0 +1,53 @@
+/* Animate when opening */
+.alert-animation-open {
+    animation-name: fadeIn, zoomIn;
+    animation-duration: 1000ms;
+    animation-timing-function: ease;
+}
+
+/* Animate when closing */
+.alert-animation-closing {
+    animation-name: fadeOut, zoomOut;
+    animation-duration: 1000ms;
+    animation-timing-function: ease;
+}
+
+@keyframes fadeIn {
+    0% {
+        opacity: 0;
+    }
+
+    100% {
+        opacity: 1;
+    }
+}
+
+@keyframes fadeOut {
+    0% {
+        opacity: 1;
+    }
+
+    100% {
+        opacity: 0;
+    }
+}
+
+@keyframes zoomIn {
+    0% {
+        transform: scale(0.9);
+    }
+
+    100% {
+        transform: scale(1);
+    }
+}
+
+@keyframes zoomOut {
+    0% {
+        transform: scale(1);
+    }
+
+    100% {
+        transform: scale(0.9);
+    }
+}

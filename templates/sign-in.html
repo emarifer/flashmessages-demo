@@ -1,0 +1,12 @@
+{{ template "base.layout.start" . }}
+
+<h1 class="text-center text-2xl mt-12 font-bold">Login Page</h1>
+
+<form class="bg-[#191E24] rounded-xl drop-shadow-xl flex flex-col gap-4 w-96 p-8" method="post" action="/user/signin">
+    <label for="password">Password:</label>
+    <input class="input input-bordered input-primary bg-slate-800" type="password" id="password" name="password"
+        required autofocus>
+    <button class="btn btn-primary text-cyan-50" type="submit">Sign In</button>
+</form>
+
+{{ template "base.layout.end" .}}

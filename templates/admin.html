@@ -1,0 +1,9 @@
+{{ template "base.layout.start" . }}
+
+<h1 class="text-center text-2xl mt-12 font-bold">Admin Page</h1>
+
+<p class="text-center text-lg mt-4 font-medium">
+    Hi {{ .User }}! You have been authenticated!
+</p>
+
+{{ template "base.layout.end" .}}
